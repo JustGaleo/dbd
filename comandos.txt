@@ -1,0 +1,5 @@
+docker build -t spring-backend .
+
+docker build -t angular-frontend .
+
+docker-compose up

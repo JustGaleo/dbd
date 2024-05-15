@@ -1,0 +1,61 @@
+<div class="background-container" [style.background-image]="backgroundImage">
+    <div class="space"></div>
+    <div class="tablero">
+        <table>
+        <tbody>
+            @for (row of getRowsData(); track $index) {
+                <tr>
+                    @for (item of row; track $index) {
+                        <td>
+                            <img  [src]="item.imagen"  height="120px" width="120px">
+                            <img [src]="'/assets/images/' + item.nombre + '.jpg'"  height="120px" width="180px">
+                        </td>
+                    }
+                    @if (row.length < 5) {
+                        <td colspan="5 - row.length"></td>
+                    }
+                   
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    </div>
+    <div class="bolsas">
+        <table class="field">
+            <tbody>
+                <tr>
+                    <td><img src="/assets/images/bolsaMapas.png" alt="bolsaMapas" (click)="bolsaMapas()" height="250px" width="250px">
+                    </td>
+                    <td><img src="/assets/images/bolsaPerks.png" alt="bolsaPerks" (click)="bolsaPerks()" height="250px" width="250px">
+                    </td>
+                    <td><img src="/assets/images/bolsaCastigos.png" alt="bolsaCastigos" (click)="bolsaCastigos()" height="250px" width="250px"></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>
+                        @if (imageToShow.imagen) {
+                            <img [src]="imageToShow.imagen" alt="mapSelected" [title]="imageToShow.nombre" height="150px" width="150px">
+                        }
+                    </td>
+                    <td>
+                    <div class="image-grid">
+                        @for (item of imageToShowPerks; track $index) {
+                            <img [src]="item.imagen" alt="perkSelected$index" height="150px" width="150px" [title]="item.nombre">
+                        }
+                    </div>
+                    </td>
+                    <td>
+                        @if (castigoToShow.imagen) {
+                            <img [src]="castigoToShow.imagen" alt="castigoSelected" [title]="castigoToShow.nombre" height="150px" width="300px">
+                        }
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="inicioPartida">
+        <button mat-raised-button (click)="empezarPartida()" [disabled]="enableIniciarPartida">Iniciar partida</button>
+    </div>
+</div>

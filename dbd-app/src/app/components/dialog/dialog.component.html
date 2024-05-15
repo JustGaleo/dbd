@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Select an Option</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Select an option</mat-label>
+    <mat-select [(ngModel)]="selectedOption" required>
+      <mat-option value="WIN" >WIN</mat-option>
+      <mat-option value="LOSE">LOSE</mat-option>
+      <mat-option value="DESACTIVADO">DESACTIVADO</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<div class="save">
+<mat-dialog-actions>
+  <button mat-raised-button (click)="onSave()">Save</button>
+</mat-dialog-actions>
+</div>

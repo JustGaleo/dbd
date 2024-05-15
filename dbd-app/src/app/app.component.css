@@ -1,0 +1,53 @@
+.bolsas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bolsas table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bolsas td {
+  text-align: center;
+ 
+}
+
+.bolsas td img {
+  max-width: 50%;
+  /* Adjust as needed */
+  height: auto;
+  cursor: pointer;
+}
+
+.background-container {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.inicioPartida {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+}
+
+.tablero {
+  text-align: center;
+}
+
+.tablero table {
+  margin: 0 auto;
+  text-align: left; /* Reset the text-align for table contents */
+}
+.space{
+  height: 30px;
+}

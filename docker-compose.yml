@@ -1,0 +1,22 @@
+version: '3'
+services:
+  spring-backend:
+    build: ./dbd
+    ports:
+      - "8080:8080"
+    volumes:
+      - c:/imagesDBD:/data/images
+    networks:
+      - your-network
+  angular-frontend:
+    build: ./dbd-app
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./dbd-app:/app
+      - /app/node_modules
+    networks:
+      - your-network
+networks:
+  your-network:
+    driver: bridge
